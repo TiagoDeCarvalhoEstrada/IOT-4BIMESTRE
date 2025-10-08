@@ -1,0 +1,248 @@
+[
+    {
+        "id": "6dd939d9dfa8e1eb",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8ac2e9aeaacf1598",
+        "type": "aedes broker",
+        "z": "6dd939d9dfa8e1eb",
+        "name": "MEU BROCKER",
+        "mqtt_port": 1883,
+        "mqtt_ws_bind": "port",
+        "mqtt_ws_port": "",
+        "mqtt_ws_path": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "persistence_bind": "memory",
+        "dburl": "",
+        "usetls": false,
+        "x": 260,
+        "y": 480,
+        "wires": [
+            [
+                "b3579d31894005f1"
+            ],
+            [
+                "54c14ab6d36b47e0"
+            ]
+        ]
+    },
+    {
+        "id": "b3579d31894005f1",
+        "type": "debug",
+        "z": "6dd939d9dfa8e1eb",
+        "name": "debug status",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "54c14ab6d36b47e0",
+        "type": "debug",
+        "z": "6dd939d9dfa8e1eb",
+        "name": "debug publish",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "d643773c15012eb2",
+        "type": "mqtt in",
+        "z": "6dd939d9dfa8e1eb",
+        "name": "",
+        "topic": "LAB 1",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "daee83fdaffafcfb",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 580,
+        "wires": [
+            [
+                "8742c6c03e8e6843"
+            ]
+        ]
+    },
+    {
+        "id": "a555d82e75628be6",
+        "type": "mqtt out",
+        "z": "6dd939d9dfa8e1eb",
+        "name": "",
+        "topic": "LAB 1",
+        "qos": "1",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "d92c70ee7cf3c8ea",
+        "x": 570,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "59be64f8475116bb",
+        "type": "comment",
+        "z": "6dd939d9dfa8e1eb",
+        "name": "MQTT IN",
+        "info": "",
+        "x": 240,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "cae0741f663791d1",
+        "type": "comment",
+        "z": "6dd939d9dfa8e1eb",
+        "name": "MQTT OUT",
+        "info": "",
+        "x": 590,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "57da235f38d43634",
+        "type": "inject",
+        "z": "6dd939d9dfa8e1eb",
+        "name": "SEU NOME",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Tiago Estrada",
+        "payloadType": "str",
+        "x": 390,
+        "y": 660,
+        "wires": [
+            [
+                "a555d82e75628be6"
+            ]
+        ]
+    },
+    {
+        "id": "8742c6c03e8e6843",
+        "type": "debug",
+        "z": "6dd939d9dfa8e1eb",
+        "name": "MSG DO LAB 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "daee83fdaffafcfb",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.20.10",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "d92c70ee7cf3c8ea",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.20.10",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "7771a14833e4660d",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-aedes": "0.15.0"
+        }
+    }
+]
